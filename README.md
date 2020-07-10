@@ -3,6 +3,10 @@
 
 ipcMain is an electron module which is used to get prop from html/js side of project
 
+path is only prop required for us to get the video length
+ 
+ipcRenderer is an electron module which is used to send prop to electron side of project
+
 mainWindow.webContents.send is to send props.
 
 let mainWindow is used beacuse of scope of mainWindow
