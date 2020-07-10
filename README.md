@@ -1,2 +1,2 @@
-# VideoInfo
-video info is a basic native desktop app which is built using electron , we used ffmpeg to display the duration of the video 
+# videoinfo
+ video info is a native desktop app made with electron with basic html page and we used ffmpeg to display the video duration

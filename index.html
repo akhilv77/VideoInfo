@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video Info</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <form id="form_id">
+      <div>
+        <label id="labelt">Select Video</label>
+        <input type="file" accept="video/*" id="inputt" />
+      </div>
+      <button type="submit" id="buttont">Get Info</button>
+    </form>
+
+    <h1 id="length"></h1>
+
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron;
+
+      // path is only prop required for us to get the video length
+      // ipcRenderer is an electron module which is used to send prop to electron side of project
+
+      document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const { path } = document.querySelector("input").files[0];
+        ipcRenderer.send("video_submitted", path);
+      });
+
+      ipcRenderer.on("video_length", (event, duration) => {
+        document.querySelector(
+          "#length"
+        ).innerHTML = `your video is ${duration} seconds`;
+      });
+    </script>
+  </body>
+</html>
