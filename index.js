@@ -25,3 +25,4 @@ ipcMain.on("video_submitted", (event, path) => {
 // let mainWindow is used beacuse of scope of mainWindow
 //if require not defined in html then try using webPreferences in js BrowserWindow as below
 // install npm i --save fluent-ffmpeg after installing into computer
+// loadUrl is used to link html pages with electron.
